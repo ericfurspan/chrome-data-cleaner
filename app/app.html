@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chrome Data Cleaner</title>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='../external/styles/tippy.css' />
+    <link rel='stylesheet' type='text/css' href='../external/styles/tippy-theme-light-border.css' />
+    <link rel='stylesheet' type='text/css' href='./app.css' />
+    <script src='./assets/data/chrome-api.js'></script>
+    <script src='./scripts/core.js'></script>
+    <script src='./scripts/app.js'></script>
+  </head>
+  <body>
+    <header>
+      <div class='row jc-c ai-c mode-wrapper'>
+        <div class="mode-label">All Chrome Data</div>
+        <div class="mode-label mode-off">Cookies</div>
+      </div>
+    </header>
+    <br />
+    <main>
+      <div id="bulk-tool">
+        <div class="row jc-sb ai-c">
+          <h2>All Chrome Data</h2><br/>
+          <label id="clean_since" class='row jc-sb'>
+            <span data-tippy-content="Remove all data accumulated on or after this date.
+              Leaving empty will remove all data for the types selected.">
+              Remove since:
+            </span>
+            <input type='date' />
+          </label>
+        </div> <br />
+        <span class="block">Data Types (select at least 1)</span> <br />
+        <form id='browsing_data_form'>
+        </form>
+        <div class='row jc-sa ai-c'>
+          <label
+            id="select-all"
+            data-tippy-content="Heads up! This setting will erase all browsing data.
+            You may want to set a &apos;Remove Since&apos; date."
+          >
+            <input type="checkbox"><span>Select All</span></input>
+          </label>
+          <button id="clean-all-btn" class="btn-lg" type="submit">
+            Remove Data
+          </button>
+        </div>
+        <br />
+      </div>
+      <div id="cookie-tool" class="none">
+        <div class="row jc-sb ai-c">
+          <h2
+            id="cookie_header"
+            data-tippy-content="Cookies are files created by websites you visit. They make your online experience easier by saving browsing information. With cookies, sites can keep you signed in, remember your site preferences, and give you locally relevant content.">
+            Cookies
+          </h2><br/>
+          <div class="right">
+            <span>Filter:</span>
+            <input id='cookie_filter' type='search' placeholder='Search domains'>
+          </div>
+        </div> <br />
+        <div class="row jc-even ai-c" style="height: 75px;">
+          <div>Showing <span id='filter_count'></span> of <span id='total_count'></span> cookie domains</div>
+          <span id='delete_all_button'></span>
+        </div>
+        <table id='cookies' class='relative'>
+          <tr class='header'>
+            <th id='cookie_domain_header'>Domain</th>
+            <th id='cookie_count_header' class="center">Cookies</th>
+          </tr>
+        </table>
+      </div>
+    </main>
+    <script src="../external/scripts/popper.min.js"></script>
+    <script src="../external/scripts/tippy-bundle.iife.min.js"></script>
+    <script src="../external/scripts/sweetalert2.min.js"></script>
+  </body>
+</html>

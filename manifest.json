@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Data Cleaner",
+  "short_name": "Chrome Data Cleaner",
+  "author": "Eric Furspan",
+  "version": "1.0",
+  "description": "Easily delete all types of browsing data stored in Chrome",
+  "icons": {
+    "16": "app/assets/img/broom_16.png",
+    "128": "app/assets/img/broom_128.png"
+  },
+  "background": {  "scripts": [ "app/scripts/browser-listener.js" ] },
+  "permissions": [ "cookies", "browsingData", "http://*/*", "https://*/*" ],
+  "browser_action": {
+    "default_title": "Chrome Data Cleaner",
+    "default_popup": "app/app.html",
+    "default_icon": {
+      "16": "app/assets/img/broom_16.png",
+      "128": "app/assets/img/broom_128.png"
+    }
+  }
+}
