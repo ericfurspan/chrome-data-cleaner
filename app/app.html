@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Chrome Data Cleaner</title>
-    <link href='https://fonts.googleapis.com/css?family=Titillium+Web&display=swap' rel='stylesheet'>
     <link rel='stylesheet' type='text/css' href='../external/styles/tippy.css' />
     <link rel='stylesheet' type='text/css' href='../external/styles/tippy-theme-light-border.css' />
     <link rel='stylesheet' type='text/css' href='./app.css' />
@@ -30,7 +29,7 @@
             <input type='date' />
           </label>
         </div> <br />
-        <span class="block">Data Types (select at least 1)</span> <br />
+        <span class="block">Select at least 1 data type for removal:</span> <br /><br/>
         <form id='browsing_data_form'>
         </form>
         <div class='row jc-sa ai-c'>
@@ -59,10 +58,12 @@
             <input id='cookie_filter' type='search' placeholder='Search domains'>
           </div>
         </div> <br />
-        <div class="row jc-even ai-c" style="height: 75px;">
+        <br />
+        <div class="row jc-even ai-c">
           <div>Showing <span id='filter_count'></span> of <span id='total_count'></span> cookie domains</div>
           <span id='delete_all_button'></span>
         </div>
+        <br />
         <table id='cookies' class='relative'>
           <tr class='header'>
             <th id='cookie_domain_header'>Domain</th>

@@ -3,8 +3,7 @@
   "name": "Chrome Data Cleaner",
   "short_name": "Chrome Data Cleaner",
   "author": "Eric Furspan",
-  "version": "1.0",
-  "description": "Easily delete all types of browsing data stored in Chrome",
+  "version": "1.0.1",
   "icons": {
     "16": "app/assets/img/broom_16.png",
     "128": "app/assets/img/broom_128.png"
