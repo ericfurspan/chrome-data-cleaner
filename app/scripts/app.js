@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   select('#select-all').addEventListener('hover', tippy('#select-all', { theme: 'light-border' }));
   select('#cookie_header').addEventListener('hover', tippy('#cookie_header', { theme: 'light-border' }));
   select('.inputLabel').addEventListener('hover', tippy('.inputLabel', { theme: 'light-border' }));
+  // Cookie table sort click handlers
+  select('#cookie_domain_header').addEventListener('click', e => { reloadCookieTable('domains') });
+  select('#cookie_count_header').addEventListener('click', e => { reloadCookieTable('cookies') });
+  // Navigation tab click handlers 
   select('.mode-label:first-child').addEventListener('click', e => {
     select('.mode-label:first-child').classList.remove('mode-off');
     select('.mode-label:last-child').classList.add('mode-off');

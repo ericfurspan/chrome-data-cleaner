@@ -26,6 +26,10 @@ table {
   border-spacing: 0px 12px;
   width: 100%;
 }
+table th {
+  cursor: pointer;
+  font-weight: 500;
+}
 button {
   cursor: pointer;
   outline: 0;

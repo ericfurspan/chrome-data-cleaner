@@ -18,11 +18,17 @@ class CookieCache {
     this.getCookies = domain => this._cookies[domain];
     // Returns a sorted list of cookie domains that match |filter|. If |filter| is
     //  null, returns all domains.
-    this.getDomains = filter => {
+    this.getDomains = (filter, sortBy) => {
       const result = [];
-      sortedKeys(this._cookies).forEach(domain => {
-        if (!filter || domain.indexOf(filter) != -1) { result.push(domain) }
-      });
+      if (sortBy === 'domains') {
+        sortByDomains(this._cookies).forEach(domain => {
+          if (!filter || domain.indexOf(filter) != -1) { result.push(domain) }
+        });
+      } else {
+        sortByCookies(this._cookies).forEach(domain => {
+          if (!filter || domain.indexOf(filter) != -1) { result.push(domain) }
+        });
+      }
       return result;
     }
     this.remove = cookie => {
@@ -53,14 +59,10 @@ const selectAll = selector => document.querySelectorAll(selector);
 /**/
 /* Utilities */
 /**/
-const sortedKeys = array => {
-  const keys = [];
-  for (let i in array) {
-    keys.push(i);
-  }
-  keys.sort();
-  return keys;
-};
+const sortByCookies = obj => Object.keys(obj).sort((a, b) => obj[b].length - obj[a].length);
+const sortByDomains = obj => Object.keys(obj).sort();
+
+
 const cookieMatch = (c1, c2) => (
   (c1.name == c2.name) && (c1.domain == c2.domain) &&
   (c1.hostOnly == c2.hostOnly) && (c1.path == c2.path) &&
@@ -130,10 +132,10 @@ const scheduleReloadCookieTable = () => {
     setTimeout(reloadCookieTable, 250);
   }
 }
-const reloadCookieTable = () => {
+const reloadCookieTable = (sortBy) => {
   reload_scheduled = false;
   let filter = select('#cookie_filter').value;
-  let domains = cache.getDomains(filter);
+  let domains = cache.getDomains(filter, sortBy);
   generateCookieTableSummary(domains);
   resetCookieTable();
   domains.forEach(domain => { generateCookieRow(domain)});
