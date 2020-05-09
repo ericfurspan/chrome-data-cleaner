@@ -12,7 +12,7 @@
   <body>
     <header>
       <div class='row jc-c ai-c mode-wrapper'>
-        <div class="mode-label">All Chrome Data</div>
+        <div class="mode-label">All data</div>
         <div class="mode-label mode-off">Cookies</div>
       </div>
     </header>
@@ -20,10 +20,10 @@
     <main>
       <div id="bulk-tool">
         <div class="row jc-sb ai-c">
-          <h2>All Chrome Data</h2><br/>
+          <h2>Bulk Cleaner</h2><br/>
           <label id="clean_since" class='row jc-sb'>
             <span data-tippy-content="Remove all data accumulated on or after this date.
-              Leaving empty will remove all data for the types selected.">
+              Leaving this empty will remove the full history of data for the selected types.">
               Remove since:
             </span>
             <input type='date' />
@@ -51,11 +51,10 @@
           <h2
             id="cookie_header"
             data-tippy-content="Cookies are files created by websites you visit. They make your online experience easier by saving browsing information. With cookies, sites can keep you signed in, remember your site preferences, and give you locally relevant content.">
-            Cookies
+            Cookie Cleaner
           </h2><br/>
           <div class="right">
-            <span>Filter:</span>
-            <input id='cookie_filter' type='search' placeholder='Search domains'>
+            <input tabindex="1" id='cookie_filter' type='search' placeholder='Filter domains...'>
           </div>
         </div> <br />
         <br />

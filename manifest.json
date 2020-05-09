@@ -2,15 +2,15 @@
   "manifest_version": 2,
   "name": "Chrome Data Cleaner",
   "short_name": "Chrome Data Cleaner",
-  "description": "Delete any type of chrome browsing data in just a couple clicks. Featuring the easiest way to find and delete cookies.",
+  "description": "Easily remove any chrome browsing data. Featuring a dedicated Cookie removal tool.",
   "author": "Eric Furspan",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "icons": {
     "16": "app/assets/img/broom_16.png",
     "128": "app/assets/img/broom_128.png"
   },
   "background": {  "scripts": [ "app/scripts/browser-listener.js" ] },
-  "permissions": [ "cookies", "browsingData", "http://*/*", "https://*/*" ],
+  "permissions": [ "cookies", "browsingData", "<all_urls>"],
   "browser_action": {
     "default_title": "Chrome Data Cleaner",
     "default_popup": "app/app.html",
